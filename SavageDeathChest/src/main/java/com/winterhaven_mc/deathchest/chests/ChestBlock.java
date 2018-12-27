@@ -211,7 +211,6 @@ public final class ChestBlock {
 						remainingItems.addAll(playerinventory.addItem(itemStack).values());
 
 						// play inventory add sound
-						plugin.soundConfig.playSound(player, SoundId.INVENTORY_ADD_ITEM);
 					}
 				}
 			}

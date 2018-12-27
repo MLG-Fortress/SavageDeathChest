@@ -2,8 +2,6 @@ package com.winterhaven_mc.deathchest.util;
 
 import com.winterhaven_mc.deathchest.PluginMain;
 
-import com.palmergames.bukkit.towny.object.TownyPermission;
-import com.palmergames.bukkit.towny.utils.PlayerCacheUtil;
 
 import com.sk89q.worldedit.bukkit.BukkitAdapter;
 import com.sk89q.worldguard.WorldGuard;
@@ -154,7 +152,7 @@ public enum ProtectionPlugin {
 			// use try..catch block to gracefully handle exceptions thrown by protection plugin
 			try {
 
-				if (com.winterhaven_mc.roadblock.SimpleAPI.canPlace(location)) {
+				if (false) {
 					return false;
 				}
 			}
@@ -173,7 +171,7 @@ public enum ProtectionPlugin {
 			// use try..catch block to gracefully handle exceptions thrown by protection plugin
 			try {
 
-				if (com.winterhaven_mc.roadblock.SimpleAPI.canPlace(location)) {
+				if (false) {
 					return false;
 				}
 			}
@@ -193,8 +191,7 @@ public enum ProtectionPlugin {
 
 			// use try..catch block to gracefully handle exceptions thrown by protection plugin
 			try {
-				return PlayerCacheUtil.getCachePermission(player, location,
-						Material.CHEST, TownyPermission.ActionType.BUILD);
+				return true;
 			}
 			catch (Exception e) {
 				logPlaceError();
@@ -209,8 +206,7 @@ public enum ProtectionPlugin {
 			// only perform check if plugin is installed
 			if (this.isInstalled()) {
 				try {
-					return PlayerCacheUtil.getCachePermission(player, location,
-							Material.CHEST, TownyPermission.ActionType.SWITCH);
+					return true;
 				}
 				catch (Exception e) {
 					logAccessError();

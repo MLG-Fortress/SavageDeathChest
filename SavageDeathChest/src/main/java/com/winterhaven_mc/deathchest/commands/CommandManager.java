@@ -156,7 +156,6 @@ public final class CommandManager implements CommandExecutor, TabCompleter {
 
 		if (!sender.hasPermission("deathchest.status")) {
 			plugin.messageManager.sendMessage(sender, MessageId.COMMAND_FAIL_STATUS_PERMISSION);
-			plugin.soundConfig.playSound(sender, SoundId.COMMAND_FAIL);
 			return true;
 		}
 
@@ -179,7 +178,7 @@ public final class CommandManager implements CommandExecutor, TabCompleter {
 			expireTime = -1;
 		}
 		sender.sendMessage(ChatColor.GREEN + "Chest Expiration: "
-				+ ChatColor.RESET + plugin.messageManager.getTimeString(TimeUnit.MINUTES.toMillis(expireTime)));
+				+ ChatColor.RESET + TimeUnit.MINUTES.toMillis(expireTime));
 
 		sender.sendMessage(ChatColor.GREEN + "Require Chest: "
 				+ ChatColor.RESET + plugin.getConfig().getString("require-chest"));
@@ -210,8 +209,8 @@ public final class CommandManager implements CommandExecutor, TabCompleter {
 			sender.sendMessage(ChatColor.AQUA + "  [ NONE ENABLED ]");
 		}
 
-		sender.sendMessage(ChatColor.GREEN + "Enabled Worlds: " + ChatColor.RESET +
-				plugin.worldManager.getEnabledWorldNames().toString());
+		//sender.sendMessage(ChatColor.GREEN + "Enabled Worlds: " + ChatColor.RESET +
+		//		plugin.worldManager.getEnabledWorldNames().toString());
 
 		sender.sendMessage(ChatColor.GREEN + "Replaceable Blocks: " + ChatColor.RESET +
 				plugin.chestManager.replaceableBlocks.toString());
@@ -230,7 +229,6 @@ public final class CommandManager implements CommandExecutor, TabCompleter {
 
 		if (!sender.hasPermission("deathchest.reload")) {
 			plugin.messageManager.sendMessage(sender, MessageId.COMMAND_FAIL_RELOAD_PERMISSION);
-			plugin.soundConfig.playSound(sender, SoundId.COMMAND_FAIL);
 			return true;
 		}
 
@@ -247,13 +245,10 @@ public final class CommandManager implements CommandExecutor, TabCompleter {
 		plugin.debug = plugin.getConfig().getBoolean("debug");
 
 		// update enabledWorlds list
-		plugin.worldManager.reload();
 
 		// reload messages
-		plugin.messageManager.reload();
 
 		// reload sounds
-		plugin.soundConfig.reload();
 
 		// reload datastore if changed
 		DataStoreFactory.reload();
@@ -283,7 +278,6 @@ public final class CommandManager implements CommandExecutor, TabCompleter {
 		// if command sender does not have permission to list death chests, output error message and return true
 		if (!sender.hasPermission("deathchest.list")) {
 			plugin.messageManager.sendMessage(sender, MessageId.COMMAND_FAIL_LIST_PERMISSION);
-			plugin.soundConfig.playSound(sender, SoundId.COMMAND_FAIL);
 			return true;
 		}
 
@@ -299,7 +293,6 @@ public final class CommandManager implements CommandExecutor, TabCompleter {
 
 		if (args.length > maxArgs) {
 			plugin.messageManager.sendMessage(sender, MessageId.COMMAND_FAIL_ARGS_COUNT_OVER);
-			plugin.soundConfig.playSound(sender, SoundId.COMMAND_FAIL);
 			return true;
 		}
 
@@ -323,7 +316,6 @@ public final class CommandManager implements CommandExecutor, TabCompleter {
 				// if sender does not have list other permission, send message and return
 				if (!sender.hasPermission("deathchest.list.other")) {
 					plugin.messageManager.sendMessage(sender, MessageId.COMMAND_FAIL_LIST_OTHER_PERMISSION);
-					plugin.soundConfig.playSound(sender, SoundId.COMMAND_FAIL);
 					return true;
 				}
 				for (OfflinePlayer offlinePlayer : offlinePlayers) {
@@ -333,7 +325,6 @@ public final class CommandManager implements CommandExecutor, TabCompleter {
 				}
 				if (targetPlayer == null && !passedPlayerName.equals("*")) {
 					plugin.messageManager.sendMessage(sender, MessageId.LIST_PLAYER_NOT_FOUND);
-					plugin.soundConfig.playSound(sender, SoundId.COMMAND_FAIL);
 					return true;
 				}
 			}
@@ -434,7 +425,6 @@ public final class CommandManager implements CommandExecutor, TabCompleter {
 		// if command sender does not have permission to list death chests, output error message and return true
 		if (!sender.hasPermission("deathchest.help")) {
 			plugin.messageManager.sendMessage(sender, MessageId.COMMAND_FAIL_HELP_PERMISSION);
-			plugin.soundConfig.playSound(sender, SoundId.COMMAND_FAIL);
 			return true;
 		}
 

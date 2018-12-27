@@ -32,26 +32,6 @@
 	</repositories>
 
 	<dependencies>
-		<!-- WorldManagerLib -->
-		<dependency>
-			<groupId>com.winterhaven-mc</groupId>
-			<artifactId>world-manager-lib</artifactId>
-			<version>1.0.6</version>
-		</dependency>
-
-		<!-- MessageManagerLib -->
-		<dependency>
-			<groupId>com.winterhaven-mc</groupId>
-			<artifactId>message-manager-lib</artifactId>
-			<version>1.0.4</version>
-		</dependency>
-
-		<!-- SoundConfigLib -->
-		<dependency>
-			<groupId>com.winterhaven-mc</groupId>
-			<artifactId>sound-config-lib</artifactId>
-			<version>1.0.2</version>
-		</dependency>
 
 		<!-- Bukkit -->
 		<dependency>
@@ -93,21 +73,6 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- Towny -->
-		<dependency>
-			<groupId>com.palmergames</groupId>
-			<artifactId>Towny</artifactId>
-			<version>0.93.0.0</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<!-- RoadBlock -->
-		<dependency>
-			<groupId>com.winterhaven-mc</groupId>
-			<artifactId>RoadBlock</artifactId>
-			<version>1.13.1</version>
-			<scope>provided</scope>
-		</dependency>
 	</dependencies>
 
 	<build>
