@@ -314,7 +314,6 @@ public final class DeathChest {
 	public final void destroy() {
 
 		// play chest break sound at chest location
-		plugin.soundConfig.playSound(this.getLocation(), SoundId.CHEST_BREAK);
 
 		// get block map for this chest
 		Map<ChestBlockType,ChestBlock> chestBlockMap = plugin.chestManager.getChestBlockMap(this.chestUUID);

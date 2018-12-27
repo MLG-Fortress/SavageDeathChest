@@ -112,7 +112,7 @@ public final class MessageManager extends AbstractMessageManager {
 
 		if (deathChest != null) {
 			if (deathChest.getLocation() != null) {
-				replacements.put("%WORLD_NAME%", plugin.worldManager.getWorldName(deathChest.getLocation().getWorld()));
+				replacements.put("%WORLD_NAME%", (deathChest.getLocation().getWorld().getName()));
 				replacements.put("%LOC_X%", String.valueOf(deathChest.getLocation().getBlockX()));
 				replacements.put("%LOC_Y%", String.valueOf(deathChest.getLocation().getBlockY()));
 				replacements.put("%LOC_Z%", String.valueOf(deathChest.getLocation().getBlockZ()));
@@ -155,7 +155,7 @@ public final class MessageManager extends AbstractMessageManager {
 
 		if (deathChest != null) {
 			if (deathChest.getLocation() != null) {
-				replacements.put("%WORLD_NAME%", plugin.worldManager.getWorldName(deathChest.getLocation().getWorld()));
+				replacements.put("%WORLD_NAME%", (deathChest.getLocation().getWorld().getName()));
 				replacements.put("%LOC_X%", String.valueOf(deathChest.getLocation().getBlockX()));
 				replacements.put("%LOC_Y%", String.valueOf(deathChest.getLocation().getBlockY()));
 				replacements.put("%LOC_Z%", String.valueOf(deathChest.getLocation().getBlockZ()));

@@ -20,6 +20,7 @@ public final class PluginMain extends JavaPlugin {
 
 	public static PluginMain instance;
 
+	public WorldManager worldManager;
 	public MessageManager messageManager;
 	public DataStore dataStore;
 	public ChestManager chestManager;
@@ -37,6 +38,7 @@ public final class PluginMain extends JavaPlugin {
 		saveDefaultConfig();
 
 		// instantiate world manager
+		worldManager = new WorldManager(this);
 
 		// instantiate message manager
 		messageManager = new MessageManager(this);
